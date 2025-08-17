@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="StuddyBot is an AI chatbot powered by Gemini API, offering instant answers and smooth voice interaction. Created by Abinesh." />
+  <meta name="keywords" content="StuddyBot, AI Chatbot, Gemini API, Google AI, OpenAI, voice chatbot, smart assistant, virtual assistant, chatbot project, AI chatbot for website, ask questions to AI, chatbot with voice, AI web app, Abinesh, AI developer, chatbot UI, conversational AI" />
+  <meta name="author" content="Abinesh" />
+
+  <!-- Open Graph Meta Tags (for social sharing) -->
+  <meta property="og:title" content="StuddyBot - VisionChat" />
+  <meta property="og:description" content="Meet your smart AI chatbot — powered by Gemini, with built-in voice support. Give it a try today!" />
+  <meta property="og:image" content="img/StuddyBot.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://StuddyBot.netlify.app/" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/img/ai.png" type="image/png" />
+
+  <!-- Title -->
+  <title>StuddyBot - VisionChat</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+
+<body>
+<header class="navbar">
+  <div class="navbar-left">
+    <a href="index.html"><h1>StuddyBot</h1></a>
+  </div>
+
+  <div class="navbar-center">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="chat.html">Chat</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="navbar-right">
+    <button id="themeToggle" aria-label="Toggle theme">🌙</button>
+  </div>
+</header>
+
+
+<main>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Meet <span>StuddyBot</span></h1>
+      <p>Your VisionChat assistant, built for speed, smartness, and style.</p>
+      <button class="cta" id="startChatBtn">Start Chatting</button>
+
+    </div>
+  </section>
+
+  <!-- FEATURES SECTION -->
+  <section class="features" id="features">
+    <h2 class="section-title">Why StuddyBot?</h2>
+    <div class="feature-grid">
+      <div class="card animate">🧠 <h3>Smart Replies</h3><p>Get quick, accurate responses to your queries.</p></div>
+      <div class="card animate">🎙️ <h3>Voice Input</h3><p>Speak your questions for a hands-free experience.</p></div>
+      <div class="card animate">🌐 <h3>Multilingual</h3><p>Interact in your preferred language with ease.</p></div>
+      <div class="card animate">⚡ <h3>Prompt Tips</h3><p>Discover helpful suggestions to guide your chat.</p></div>
+    </div>
+  </section>
+
+<section class="chat-section" id="chat">
+  <h2 class="section-title">Try StuddyBot</h2>
+  <div class="chat-box animate" id="chatBox">
+    <div class="chat-message ai">👾 Hello! I'm StuddyBot. How can I assist you today?</div>
+    <div class="chat-message user">🙋‍♂️ What's the weather in Villupuram?</div>
+    <div class="chat-message ai">👾 It's currently 28°C and sunny in Villupuram.</div>
+  </div>
+  <form id="chatForm" class="chat-input-area">
+    <input type="text" id="userInput" placeholder="Type your message..." required />
+    <button type="submit">Send</button>
+  </form>
+</section>
+</main>
+
+  <footer>
+    <p>© 2025 StuddyBot. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

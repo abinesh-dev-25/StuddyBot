@@ -1,0 +1,594 @@
+/* RESET + BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  color: #fff;
+  transition: background 0.3s, color 0.3s;
+  height: 100%;
+}
+main {
+  flex: 1;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* NAVBAR CONTAINER */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Divide space evenly between 3 parts */
+.navbar-left,
+.navbar-center,
+.navbar-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* Logo on the left */
+.navbar-left h1 {
+  font-size: 1.8rem;
+  background: linear-gradient(to right, #0ef6cc, #9c6fff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Center nav links */
+.navbar-center {
+  justify-content: center;
+}
+
+.navbar-center ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-center ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.navbar-center ul li a:hover {
+  color: #0ef6cc;
+}
+
+/* Right theme toggle */
+.navbar-right {
+  justify-content: flex-end;
+}
+
+#themeToggle {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.2s ease;
+}
+
+#themeToggle:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;         
+    align-items: center;
+    padding: 0.8rem 1rem;        
+  }
+
+  .navbar-left h1 {
+    font-size: 1.4rem;           
+  }
+
+  .navbar-center ul {
+    gap: 1rem;                   
+  }
+
+  .navbar-center ul li a {
+    font-size: 0.9rem;
+  }
+
+  #themeToggle {
+    font-size: 1.2rem;
+  }
+}
+
+/* Base nav list layout */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* List items as inline blocks */
+ul li {
+  display: inline-block;
+}
+
+/* Anchor styles */
+ul li a {
+  position: relative;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+/* Light mode link color */
+body.light-mode ul li a {
+  color: #222;
+}
+
+/* Dark mode link color */
+body.dark-mode ul li a {
+  color: #eee;
+}
+
+/* Hover background and color (both themes) */
+ul li a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Hover underline animation */
+ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+ul li a:hover::after {
+  transform: scaleX(1);
+}
+
+
+/* HERO SECTION */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  background: linear-gradient(to right, #0ef6cc, #9c6fff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-content p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: #ccc;
+}
+body.light-mode .hero-content p {
+  color: #000; /* black in light mode */
+}
+
+.cta {
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  border-radius: 999px;
+  border: none;
+  background: #0ef6cc;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.cta:hover {
+  background: #0bdcb2;
+}
+
+/* Section Layout */
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* Title Styling */
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: inherit;
+}
+
+
+/* FEATURES */
+.features {
+  padding: 2rem 3rem;
+}
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  background-color: rgba(0, 255, 200, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 255, 200, 0.2);
+
+}
+/* Light Mode Card Style */
+body.light-mode .card {
+  background: rgba(0, 0, 0, 0.05); /* subtle dark glass effect */
+  color: #000; /* black text */
+}
+
+body.light-mode .card:hover {
+  background-color: rgba(0, 123, 255, 0.1); /* bluish glow */
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.2);
+}
+
+.card h3 {
+  margin-top: 0.5rem;
+  color: #0ef6cc;
+}
+
+/* CHAT DEMO */
+.chat-section {
+  padding: 2rem 3rem;
+}
+.chat-box {
+  max-width: 600px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.chat-message {
+  padding: 0.8rem 1rem;
+  border-radius: 16px;
+  max-width: 80%;
+  .chat-message {
+  transition: all 0.3s ease;
+}
+
+}
+.chat-message.ai {
+  background-color: #2e2e2e;
+  align-self: flex-start;
+}
+.chat-message.user {
+  background-color: #0ef6cc;
+  color: #000;
+  align-self: flex-end;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 0.9rem;
+}
+
+/* ANIMATIONS */
+.animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+.animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+}
+
+
+/* NAV ACTIVE LINK */
+.navbar ul li a.active {
+  color: #0ef6cc;
+  font-weight: bold;
+}
+
+/* LIGHT MODE PERSISTENCE */
+body.light-mode {
+  background: linear-gradient(to right, #ffffff, #f0f0f0);
+  color: #111;
+}
+body.light-mode .chat-message.user {
+  background-color: #0ef6cc;
+  color: #000;
+}
+body.light-mode .chat-message.ai {
+  background-color: #c1c1c1;
+  color: #000;
+}
+/* CHAT FORM */
+#chatForm {
+  max-width: 600px;
+  margin: 1rem auto;
+  display: flex;
+  gap: 1rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+
+}
+#chatForm input {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+#chatForm button {
+  padding: 0.7rem 1.5rem;
+  background-color: #0ef6cc;
+  border: none;
+  border-radius: 999px;
+  font-weight: bold;
+  cursor: pointer;
+}
+@media (max-width: 480px) {
+  #chatForm {
+    flex-direction: column;
+  }
+
+  #chatForm button {
+    width: 100%;
+  }
+}
+
+/* Optional loading style */
+.loading {
+  font-style: italic;
+  color: #ccc;
+}
+
+@media (max-width: 480px) {
+  /* Navbar layout stays row-wise */
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: row;
+    flex-wrap: nowrap; /* ✅ Prevent breaking into multiple rows */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 1rem;
+    gap: 0;
+  }
+
+  .navbar-left,
+  .navbar-center,
+  .navbar-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar-left {
+    justify-content: flex-start;  /* 🔹 Logo on left */
+  }
+
+  .navbar-center {
+    justify-content: center;      /* 🔹 Nav in center */
+  }
+
+  .navbar-right {
+    justify-content: flex-end;    /* 🔹 Toggle on right */
+  }
+
+  .navbar-center ul {
+    display: flex;
+    flex-direction: row;
+    gap: 0.7rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .navbar-center ul li a {
+    font-size: 0.85rem;
+    white-space: nowrap; /* 🚫 Prevents breaking lines */
+  }
+
+  #themeToggle {
+    font-size: 1.2rem;
+    padding: 0.2rem;
+    background: none;
+    border: none;
+  }
+}
+
+ @media (max-width: 480px) {
+  .navbar {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 1rem;
+    gap: 0;
+  }
+
+  .navbar-left,
+  .navbar-center,
+  .navbar-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar-left {
+    justify-content: flex-start;
+  }
+
+  .navbar-center {
+    justify-content: center;
+  }
+
+  .navbar-right {
+    justify-content: flex-end;
+  }
+
+  .navbar-center ul {
+    display: flex;
+    flex-direction: row;
+    gap: 0.7rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .navbar-center ul li a {
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  #themeToggle {
+    font-size: 1.2rem;
+    padding: 0.2rem;
+    background: none;
+    border: none;
+  }
+
+/* === LIGHT MODE STYLING === */
+body.light-mode .navbar ul li a {
+  color: #000; /* Set text color to black in light mode */
+}
+
+/* === DARK MODE STYLING (OPTIONAL) === */
+body.dark-mode .navbar ul li a {
+  color: #fff;
+}
+
+  /* --- Rest of your 480px styles --- */
+  .hero {
+    padding: 2.5rem 1rem;
+    flex-direction: column;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .cta {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  section {
+    padding: 60px 16px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .features {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1.2rem;
+  }
+
+  .card h3 {
+    font-size: 1.2rem;
+  }
+
+  .chat-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .chat-box {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .chat-message {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.9rem;
+    border-radius: 12px;
+  }
+
+  #chatForm {
+    gap: 0.8rem;
+  }
+
+  #chatForm input,
+  #chatForm button {
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 0.8rem;
+  }
+
+  .animate {
+    transition: all 0.5s ease-out;
+  }
+}
+}
