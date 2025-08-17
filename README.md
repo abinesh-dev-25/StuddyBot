@@ -1,4 +1,4 @@
-#StuddyBot - VisionChat Assistant
+StuddyBot - VisionChat Assistant
 
 StuddyBot is a modern, responsive chatbot web application built with HTML, CSS, and JavaScript. It leverages Google Gemini API for intelligent conversational AI, designed for speed, smartness, and stylish user experience.
 
